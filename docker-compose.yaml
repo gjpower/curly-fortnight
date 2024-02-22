@@ -1,0 +1,11 @@
+version: "3.0"
+
+services:
+  assignment:
+    image: local/assignment:latest
+    ports:
+      - "127.0.0.1:58080:8080"
+    volumes:
+      - data:/app/data
+volumes:
+  data:
