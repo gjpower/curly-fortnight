@@ -26,6 +26,10 @@ public class TransactionFileStore implements TransactionStore {
     Logger log = LoggerFactory.getLogger(TransactionFileStore.class);
 
     public TransactionFileStore(TransactionBackend backend, TransactionUpdateMessenger updateMessenger) {
+        // using skip list for ordered structure on date
+        // if thread safety was not required or synchronized blocks
+        // a treemap could be used instead
+        // nested map is used to maintain ordering by date
         memoryStore = new ConcurrentSkipListMap<>();
         this.backend = backend;
         this.updateMessenger = updateMessenger;

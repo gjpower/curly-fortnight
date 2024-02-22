@@ -6,6 +6,11 @@ If using sdkman you can set the correct java sdk for this project using
 
 ## Run locally
 
+The application's default configuration will store the json and event log
+in the `./data` folder.
+If this folder doesn't exist be sure to create it so these files can be
+written.
+
 ```shell
 ./gradlew bootRun
 ```
